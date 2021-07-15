@@ -9,9 +9,16 @@ using Microsoft.AspNetCore.Authorization;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Repositories;
+using System.Text;
+using System.Text.Json;
+using DocumentFormat.OpenXml.Spreadsheet;
+using System.IO;
+using GemBox.Spreadsheet;
+using Volo.Abp.ObjectMapping;
 
 namespace Acme.BookStore.Books
 {
+
     [Authorize(BookStorePermissions.Books.Default)]
     public class BookAppService :
         CrudAppService<
@@ -23,14 +30,17 @@ namespace Acme.BookStore.Books
         IBookAppService //implement the IBookAppService
     {
         private readonly IAuthorRepository _authorRepository;
-        
+        private readonly IRepository<Authors.Author, Guid> _authors1;
+
 
         public BookAppService(
             IRepository<Book, Guid> repository,
-            IAuthorRepository authorRepository)
+            IAuthorRepository authorRepository,
+            IRepository<Authors.Author, Guid> authors1)
             : base(repository)
         {
             _authorRepository = authorRepository;
+            _authors1 = authors1;
             GetPolicyName = BookStorePermissions.Books.Default;
             GetListPolicyName = BookStorePermissions.Books.Default;
             CreatePolicyName = BookStorePermissions.Books.Create;
@@ -93,11 +103,11 @@ namespace Acme.BookStore.Books
             var authors = await _authorRepository.GetListAsync();
 
             return new ListResultDto<AuthorLookupDto>(
-                ObjectMapper.Map<List<Author>, List<AuthorLookupDto>>(authors)
+                ObjectMapper.Map<List<Authors.Author>, List<AuthorLookupDto>>(authors)
             );
         }
 
-        private async Task<Dictionary<Guid, Author>>
+        private async Task<Dictionary<Guid, Authors.Author>>
             GetAuthorDictionaryAsync(List<Book> books)
         {
             var authorIds = books
@@ -119,6 +129,56 @@ namespace Acme.BookStore.Books
             var books = await Repository.GetListAsync();
 
             return ObjectMapper.Map<List<Book>, List<BookDto>>(books);
+        }
+
+        public async Task<object> ExportDB()
+        {
+            SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+            try
+            {
+                List<Book> getlist = await Repository.GetListAsync();
+                var list = ObjectMapper.Map<List<Book>, List<BookDto>>(getlist);
+
+
+
+                //File.WriteAllText(@"D:\ExportDatabaseBooks.json", json);
+                ExcelFile workbook = new ExcelFile();
+                ExcelWorksheet worksheet = workbook.Worksheets.Add("Books");
+
+                // Define header values
+                worksheet.Cells[0, 0].Value = "Author Name";
+                worksheet.Cells[0, 1].Value = "Book Name";
+                worksheet.Cells[0, 2].Value = "Type";
+                worksheet.Cells[0, 3].Value = "PublishDate";
+                worksheet.Cells[0, 4].Value = "Price";
+
+
+                // Write deserialized values to a sheet
+                int row = 0;
+                var lstauthr = await _authors1.GetListAsync();
+                //Authors.Author author;
+                foreach (BookDto book in list)
+                {
+                    //var author =  _authorRepository.Where(x=>x.Id == book.AuthorId).FirstOrDefault();
+                    var author = lstauthr.FirstOrDefault(x=>x.Id == book.AuthorId);
+                    worksheet.Cells[++row, 0].Value = author!=null ? author.Name : null;
+                    worksheet.Cells[row, 1].Value = book.Name;
+                    worksheet.Cells[row, 2].Value = book.Type;
+                    worksheet.Cells[row, 3].Value = book.PublishDate;
+                    worksheet.Cells[row, 4].Value = book.Price;
+                }
+
+                // Save excel file
+                workbook.Save(@"D:\ExportDatabaseBooks.xlsx");
+
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+           
+            return null;
         }
     }
 }

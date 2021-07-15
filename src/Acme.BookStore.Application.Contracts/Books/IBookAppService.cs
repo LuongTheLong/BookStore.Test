@@ -16,5 +16,7 @@ namespace Acme.BookStore.Books
         Task<ListResultDto<AuthorLookupDto>> GetAuthorLookupAsync();
 
         Task<List<BookDto>> GetAllBook();
+
+        public Task<object> ExportDB();
     }
 }

@@ -10,8 +10,8 @@ using Volo.Abp.AspNetCore.Mvc;
 
 namespace Acme.BookStore.Controllers
 {
-    [RemoteService]
-    [Route("/api/BookStore")]
+    //[RemoteService]
+    //[Route("/api/BookStore")]
     public class BookController : AbpController
     {
         private readonly IBookAppService _bookAppService;
@@ -20,12 +20,18 @@ namespace Acme.BookStore.Controllers
             _bookAppService = bookAppService;
         }
 
-        //Lay tat ca book 
-        [HttpGet("/Books")]
-        public async Task<IActionResult> GetAllBook()
+        ////Lay tat ca book 
+        //[HttpGet("/Books")]
+        //public async Task<IActionResult> GetAllBook()
+        //{
+        //    var listBook = await _bookAppService.GetAllBook();
+        //    return Ok(listBook);
+        //}
+        [HttpPost("/Books/ExportDB")]
+        public  IActionResult ExportDB()
         {
-            var listBook = await _bookAppService.GetAllBook();
-            return Ok(listBook);
+             _bookAppService.ExportDB();
+            return Ok();
         }
     }
 }

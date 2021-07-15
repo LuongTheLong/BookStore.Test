@@ -26,6 +26,13 @@
                                 icon="plus"
                                 button-type="Primary" />
                 }
+                @if (await AuthorizationService.IsGrantedAsync(BookStorePermissions.Books.Create))
+                {
+                    <abp-button id="ExportButton"
+                                text="@L["Export"].Value"
+                                icon="down"
+                                button-type="Secondary" />
+                }
             </abp-column>
         </abp-row>
     </abp-card-header>

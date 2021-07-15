@@ -93,6 +93,12 @@ namespace Acme.BookStore.Authors
             await _authorRepository.DeleteAsync(id);
         }
 
+        public async Task<List<AuthorDto>> GetAllAuthor()
+        {
+            var author = await _authorRepository.GetListAsync();
+
+            return ObjectMapper.Map<List<Author>, List<AuthorDto>>(author);
+        }
         //...SERVICE METHODS WILL COME HERE...
     }
 }

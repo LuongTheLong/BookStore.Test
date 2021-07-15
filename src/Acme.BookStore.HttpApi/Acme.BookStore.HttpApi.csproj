@@ -8,6 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\NewFolder\**" />
+    <EmbeddedResource Remove="Controllers\NewFolder\**" />
+    <None Remove="Controllers\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Acme.BookStore.Application.Contracts\Acme.BookStore.Application.Contracts.csproj" />
   </ItemGroup>
 
@@ -18,10 +24,6 @@
     <PackageReference Include="Volo.Abp.TenantManagement.HttpApi" Version="4.3.3" />
     <PackageReference Include="Volo.Abp.FeatureManagement.HttpApi" Version="4.3.3" />
     <PackageReference Include="Volo.Abp.SettingManagement.HttpApi" Version="4.3.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\NewFolder\" />
   </ItemGroup>
 
 </Project>

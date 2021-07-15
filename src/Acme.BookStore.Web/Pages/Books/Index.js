@@ -100,4 +100,24 @@
         e.preventDefault();
         createModal.open();
     });
+
+    $('#ExportButton').click(function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: '/Books/ExportDB',
+            success: function () {
+                swal({
+                    title: "Compelete",
+                    text: "Export Completed",
+                    type: "success",
+                    showCancelButton: true,
+                    closeOnConfirm: false,
+                    confirmButtonText: "OK",
+                    confirmButtonColor: "#ec6c62"
+                    //console.log('thanhf cong');
+                });
+                }
+        });
+    })
 });
