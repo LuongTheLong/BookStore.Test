@@ -107,17 +107,11 @@
             type: 'POST',
             url: '/Books/ExportDB',
             success: function () {
-                swal({
-                    title: "Compelete",
-                    text: "Export Completed",
-                    type: "success",
-                    showCancelButton: true,
-                    closeOnConfirm: false,
-                    confirmButtonText: "OK",
-                    confirmButtonColor: "#ec6c62"
-                    //console.log('thanhf cong');
-                });
-                }
+                abp.notify.success(l('export database completed'));
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                abp.notify.error(l('error'));
+            }
         });
     })
 });

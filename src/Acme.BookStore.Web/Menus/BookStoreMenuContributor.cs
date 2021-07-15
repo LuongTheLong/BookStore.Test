@@ -36,7 +36,6 @@ namespace Acme.BookStore.Web.Menus
                 l["Menu:BookStore"],
                 icon: "fa fa-book"
             );
-
             context.Menu.AddItem(bookStoreMenu);
 
             //CHECK the PERMISSION
@@ -56,7 +55,18 @@ namespace Acme.BookStore.Web.Menus
                     url: "/Authors"
                 ));
             }
-
+            var usersMenu = new ApplicationMenuItem(
+                "User",
+                l["Menu:UserManage"],
+                icon: "fa fa-users"
+                ).AddItem(
+                new ApplicationMenuItem(
+                    "User.Users",
+                    l["Menu:Users"],
+                    url: "/Users"
+                    )
+                );
+            context.Menu.AddItem(usersMenu);
         }
     }
 }
