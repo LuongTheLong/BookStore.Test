@@ -55,8 +55,8 @@ namespace Acme.BookStore
                     Name = "1984",
                     Type = BookType.Dystopia,
                     PublishDate = new DateTime(1949, 6, 8),
-                    Price = 19.84f
-                },
+                    Price = 19.84f,
+                    Amount = 50                },
                 autoSave: true
             );
 
@@ -67,7 +67,8 @@ namespace Acme.BookStore
                     Name = "The Hitchhiker's Guide to the Galaxy",
                     Type = BookType.ScienceFiction,
                     PublishDate = new DateTime(1995, 9, 27),
-                    Price = 42.0f
+                    Price = 42.0f,
+                    Amount = 30
                 },
                 autoSave: true
             );

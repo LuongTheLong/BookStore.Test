@@ -11,7 +11,7 @@
     <Compile Remove="Controllers\NewFolder\**" />
     <EmbeddedResource Remove="Controllers\NewFolder\**" />
     <None Remove="Controllers\NewFolder\**" />
-  </ItemGroup>
+  <ProjectReference Include="..\..\modules\UserManage\src\UserManage.HttpApi\UserManage.HttpApi.csproj" /><ProjectReference Include="..\..\modules\Ex/ImPortBook\src\Ex/ImPortBook.HttpApi\Ex/ImPortBook.HttpApi.csproj" /><ProjectReference Include="..\..\modules\BookExIm\src\BookExIm.HttpApi\BookExIm.HttpApi.csproj" /></ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Acme.BookStore.Application.Contracts\Acme.BookStore.Application.Contracts.csproj" />

@@ -146,6 +146,7 @@ namespace Acme.BookStore.Books
                 worksheet.Cells[0, 2].Value = "Type";
                 worksheet.Cells[0, 3].Value = "PublishDate";
                 worksheet.Cells[0, 4].Value = "Price";
+                worksheet.Cells[0, 5].Value = "Amount";
 
 
                 // Write deserialized values to a sheet
@@ -161,6 +162,7 @@ namespace Acme.BookStore.Books
                     worksheet.Cells[row, 2].Value = book.Type;
                     worksheet.Cells[row, 3].Value = book.PublishDate;
                     worksheet.Cells[row, 4].Value = book.Price;
+                    worksheet.Cells[row, 5].Value = book.Amount;
                 }
 
                 // Save excel file

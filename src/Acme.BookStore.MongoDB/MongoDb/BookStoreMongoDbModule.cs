@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.AuditLogging.MongoDB;
 using Volo.Abp.BackgroundJobs.MongoDB;
 using Volo.Abp.FeatureManagement.MongoDB;
@@ -9,6 +9,8 @@ using Volo.Abp.PermissionManagement.MongoDB;
 using Volo.Abp.SettingManagement.MongoDB;
 using Volo.Abp.TenantManagement.MongoDB;
 using Volo.Abp.Uow;
+using UserManage.MongoDB;
+
 
 namespace Acme.BookStore.MongoDB
 {
@@ -23,6 +25,8 @@ namespace Acme.BookStore.MongoDB
         typeof(AbpTenantManagementMongoDbModule),
         typeof(AbpFeatureManagementMongoDbModule)
         )]
+    [DependsOn(typeof(UserManageMongoDbModule))]
+
     public class BookStoreMongoDbModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

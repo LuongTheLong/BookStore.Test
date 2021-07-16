@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Acme.BookStore.Domain.Shared\Acme.BookStore.Domain.Shared.csproj" />
-  </ItemGroup>
+  <ProjectReference Include="..\..\modules\UserManage\src\UserManage.Domain\UserManage.Domain.csproj" /><ProjectReference Include="..\..\modules\Ex/ImPortBook\src\Ex/ImPortBook.Domain\Ex/ImPortBook.Domain.csproj" /><ProjectReference Include="..\..\modules\BookExIm\src\BookExIm.Domain\BookExIm.Domain.csproj" /></ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Emailing" Version="4.3.3" />

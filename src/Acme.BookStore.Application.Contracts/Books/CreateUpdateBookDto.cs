@@ -20,5 +20,8 @@ namespace Acme.BookStore.Books
 
         [Required]
         public float Price { get; set; }
+
+        [Required]
+        public int Amount { get; set; }
     }
 }

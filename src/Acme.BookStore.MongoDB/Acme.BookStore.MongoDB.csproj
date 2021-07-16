@@ -17,6 +17,6 @@
     <PackageReference Include="Volo.Abp.AuditLogging.MongoDB" Version="4.3.3" />
     <PackageReference Include="Volo.Abp.TenantManagement.MongoDB" Version="4.3.3" />
     <PackageReference Include="Volo.Abp.FeatureManagement.MongoDB" Version="4.3.3" />
-  </ItemGroup>
+  <ProjectReference Include="..\..\modules\UserManage\src\UserManage.MongoDB\UserManage.MongoDB.csproj" /><ProjectReference Include="..\..\modules\Ex/ImPortBook\src\Ex/ImPortBook.MongoDB\Ex/ImPortBook.MongoDB.csproj" /><ProjectReference Include="..\..\modules\BookExIm\src\BookExIm.MongoDB\BookExIm.MongoDB.csproj" /></ItemGroup>
 
 </Project>

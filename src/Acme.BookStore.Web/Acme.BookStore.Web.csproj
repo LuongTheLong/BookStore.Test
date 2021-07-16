@@ -20,7 +20,7 @@
     <Content Remove="Logs\**" />
     <EmbeddedResource Remove="Logs\**" />
     <None Remove="Logs\**" />
-  </ItemGroup>
+  <ProjectReference Include="..\..\modules\UserManage\src\UserManage.Web\UserManage.Web.csproj" /><ProjectReference Include="..\..\modules\Ex/ImPortBook\src\Ex/ImPortBook.Web\Ex/ImPortBook.Web.csproj" /><ProjectReference Include="..\..\modules\BookExIm\src\BookExIm.Web\BookExIm.Web.csproj" /></ItemGroup>
 
   <ItemGroup>
     <None Update="Pages\**\*.js">

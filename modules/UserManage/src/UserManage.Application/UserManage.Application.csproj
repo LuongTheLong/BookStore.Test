@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>UserManage</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="4.3.3" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" Version="4.3.3" />
+    <ProjectReference Include="..\UserManage.Application.Contracts\UserManage.Application.Contracts.csproj" />
+    <ProjectReference Include="..\UserManage.Domain\UserManage.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

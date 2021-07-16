@@ -74,6 +74,11 @@
                     title: l('Price'),
                     data: "price"
                 },
+
+                {
+                    title: l('Amount'),
+                    data: "amount"
+                },
                 {
                     title: l('CreationTime'), data: "creationTime",
                     render: function (data) {

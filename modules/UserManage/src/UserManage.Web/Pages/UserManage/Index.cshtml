@@ -1,0 +1,16 @@
+﻿@page
+@using Microsoft.Extensions.Localization
+@using UserManage.Localization
+@model UserManage.Web.Pages.UserManage.IndexModel
+@inject IStringLocalizer<UserManageResource> L
+@{
+}
+
+<abp-card>
+    <abp-card-header>
+        <h2>@L["Books"]</h2>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="BooksTable"></abp-table>
+    </abp-card-body>
+</abp-card>
