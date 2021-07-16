@@ -13,7 +13,7 @@ using Volo.Abp.TenantManagement;
 using Volo.Abp.Validation.Localization;
 using Volo.Abp.VirtualFileSystem;
 using UserManage;
-using BookManage;
+
 
 namespace Acme.BookStore
 {
@@ -28,7 +28,6 @@ namespace Acme.BookStore
         typeof(AbpTenantManagementDomainSharedModule)
         )]
     [DependsOn(typeof(UserManageDomainSharedModule))]
-    [DependsOn(typeof(BookManageDomainSharedModule))]
     public class BookStoreDomainSharedModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)

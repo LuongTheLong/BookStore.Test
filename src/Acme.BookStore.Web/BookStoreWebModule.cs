@@ -40,7 +40,7 @@ using Volo.Abp.VirtualFileSystem;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Acme.BookStore.Permissions;
 using UserManage.Web;
-using BookManage.Web;
+
 
 
 namespace Acme.BookStore.Web
@@ -61,7 +61,7 @@ namespace Acme.BookStore.Web
         )]
     [DependsOn(typeof(UserManageWebModule))]
 
-    [DependsOn(typeof(BookManageWebModule))]
+
     public class BookStoreWebModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)

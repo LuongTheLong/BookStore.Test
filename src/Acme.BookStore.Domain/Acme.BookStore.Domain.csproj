@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Acme.BookStore.Domain.Shared\Acme.BookStore.Domain.Shared.csproj" />
-  <ProjectReference Include="..\..\modules\UserManage\src\UserManage.Domain\UserManage.Domain.csproj" /><ProjectReference Include="..\..\modules\BookManage\src\BookManage.Domain\BookManage.Domain.csproj" /></ItemGroup>
+  <ProjectReference Include="..\..\modules\UserManage\src\UserManage.Domain\UserManage.Domain.csproj" /></ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Emailing" Version="4.3.3" />
