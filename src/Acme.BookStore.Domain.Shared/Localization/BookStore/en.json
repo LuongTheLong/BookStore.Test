@@ -44,8 +44,6 @@
     "Authors": "Authors",
     "AuthorDeletionConfirmationMessage": "Are you sure to delete the author '{0}'?",
     "BirthDate": "Birth date",
-    "NewAuthor": "New author",
-    "Menu:UserManage": "User Manage",
-    "Menu:Users": "Users"
+    "NewAuthor": "New author"
   }
 }

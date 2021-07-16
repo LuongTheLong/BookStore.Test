@@ -17,7 +17,7 @@
     <PackageReference Include="Volo.Abp.FeatureManagement.Domain.Shared" Version="4.3.3" />
     <PackageReference Include="Volo.Abp.PermissionManagement.Domain.Shared" Version="4.3.3" />
     <PackageReference Include="Volo.Abp.SettingManagement.Domain.Shared" Version="4.3.3" />
-  <ProjectReference Include="..\..\modules\UserManage\src\UserManage.Domain.Shared\UserManage.Domain.Shared.csproj" /><ProjectReference Include="..\..\modules\Ex/ImPortBook\src\Ex/ImPortBook.Domain.Shared\Ex/ImPortBook.Domain.Shared.csproj" /><ProjectReference Include="..\..\modules\BookExIm\src\BookExIm.Domain.Shared\BookExIm.Domain.Shared.csproj" /></ItemGroup>
+  <ProjectReference Include="..\..\modules\UserManage\src\UserManage.Domain.Shared\UserManage.Domain.Shared.csproj" /><ProjectReference Include="..\..\modules\BookManage\src\BookManage.Domain.Shared\BookManage.Domain.Shared.csproj" /></ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Localization\BookStore\*.json" />

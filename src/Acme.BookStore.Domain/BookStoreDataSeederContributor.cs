@@ -5,6 +5,8 @@ using Acme.BookStore.Books;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Domain.Repositories;
+using BookManage.BooksManages;
+
 
 namespace Acme.BookStore
 {
@@ -14,20 +16,29 @@ namespace Acme.BookStore
         private readonly IRepository<Book, Guid> _bookRepository;
         private readonly IAuthorRepository _authorRepository;
         private readonly AuthorManager _authorManager;
+        private readonly IRepository<BooksManage, Guid> _booksManagesRepostitory;
 
         public BookStoreDataSeederContributor(
             IRepository<Book, Guid> bookRepository,
             IAuthorRepository authorRepository,
-            AuthorManager authorManager)
+            AuthorManager authorManager,
+            IRepository<BooksManage, Guid> bookManagesRepository
+            )
         {
             _bookRepository = bookRepository;
             _authorRepository = authorRepository;
             _authorManager = authorManager;
+            _booksManagesRepostitory = bookManagesRepository;
         }
 
         public async Task SeedAsync(DataSeedContext context)
         {
             if (await _bookRepository.GetCountAsync() > 0)
+            {
+                return;
+            }
+
+            if (await _booksManagesRepostitory.GetCountAsync() > 0)
             {
                 return;
             }
@@ -48,7 +59,9 @@ namespace Acme.BookStore
                 )
             );
 
-            await _bookRepository.InsertAsync(
+
+
+            var b1 = await _bookRepository.InsertAsync(
                 new Book
                 {
                     AuthorId = orwell.Id, // SET THE AUTHOR
@@ -56,11 +69,12 @@ namespace Acme.BookStore
                     Type = BookType.Dystopia,
                     PublishDate = new DateTime(1949, 6, 8),
                     Price = 19.84f,
-                    Amount = 50                },
+                    Amount = 50
+                },
                 autoSave: true
             );
 
-            await _bookRepository.InsertAsync(
+            var b2 = await _bookRepository.InsertAsync(
                 new Book
                 {
                     AuthorId = douglas.Id, // SET THE AUTHOR
@@ -72,6 +86,31 @@ namespace Acme.BookStore
                 },
                 autoSave: true
             );
+
+            await _booksManagesRepostitory.InsertAsync(
+                new BooksManage
+                {
+                    AuthorId = orwell.Id, // SET THE AUTHOR
+                    Name = b1.Name,
+                    Type = BooksManageType.Dystopia,
+                    PublishDate = new DateTime(b1.PublishDate.Year, b1.PublishDate.Month, b1.PublishDate.Day),
+                    Price = b1.Price,
+                    Amount = 0
+                },
+                autoSave: true
+                );
+            await _booksManagesRepostitory.InsertAsync(
+                new BooksManage
+                {
+                    AuthorId = douglas.Id, // SET THE AUTHOR
+                    Name = b2.Name,
+                    Type = BooksManageType.ScienceFiction,
+                    PublishDate = new DateTime(b2.PublishDate.Year, b2.PublishDate.Month, b2.PublishDate.Day),
+                    Price = b2.Price,
+                    Amount = 0
+                },
+                autoSave: true
+                );
         }
     }
 }

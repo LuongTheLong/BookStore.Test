@@ -10,6 +10,7 @@ using Volo.Abp.SettingManagement.MongoDB;
 using Volo.Abp.TenantManagement.MongoDB;
 using Volo.Abp.Uow;
 using UserManage.MongoDB;
+using BookManage.MongoDB;
 
 
 namespace Acme.BookStore.MongoDB
@@ -27,6 +28,7 @@ namespace Acme.BookStore.MongoDB
         )]
     [DependsOn(typeof(UserManageMongoDbModule))]
 
+    [DependsOn(typeof(BookManageMongoDbModule))]
     public class BookStoreMongoDbModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

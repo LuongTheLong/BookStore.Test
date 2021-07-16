@@ -2,6 +2,7 @@
   "culture": "en",
   "texts": {
     "ManageYourProfile":  "Manage your profile",
-    "SamplePageMessage": "A sample page for the UserManage module"
+    "SamplePageMessage": "A sample page for the UserManage module",
+      "UsersManager": "Users Manager"
   }
 }

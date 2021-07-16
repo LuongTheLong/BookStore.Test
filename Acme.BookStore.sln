@@ -4,6 +4,34 @@ VisualStudioVersion = 16.0.29020.237
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.BookStore.Domain", "src\Acme.BookStore.Domain\Acme.BookStore.Domain.csproj", "{554AD327-6DBA-4F8F-96F8-81CE7A0C863F}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookManage.TestBase", "modules\BookManage\test\BookManage.TestBase\BookManage.TestBase.csproj", "{f1b3800f-24ee-4622-a38c-00896f9631e1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookManage.MongoDB.Tests", "modules\BookManage\test\BookManage.MongoDB.Tests\BookManage.MongoDB.Tests.csproj", "{a22b0095-f254-415e-9200-7ca287bf1033}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookManage.HttpApi.Client.ConsoleTestApp", "modules\BookManage\test\BookManage.HttpApi.Client.ConsoleTestApp\BookManage.HttpApi.Client.ConsoleTestApp.csproj", "{3c1c7f80-de6d-4019-8177-6cf135213277}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookManage.Domain.Tests", "modules\BookManage\test\BookManage.Domain.Tests\BookManage.Domain.Tests.csproj", "{3086bb2e-4cea-49c6-a5b1-66cc4fc944ce}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookManage.Web", "modules\BookManage\src\BookManage.Web\BookManage.Web.csproj", "{fb968114-f21c-4df8-aa9f-090b44018abb}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookManage.MongoDB", "modules\BookManage\src\BookManage.MongoDB\BookManage.MongoDB.csproj", "{5e11a62a-9c43-40e9-b7e0-130e2f91da9e}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookManage.HttpApi.Client", "modules\BookManage\src\BookManage.HttpApi.Client\BookManage.HttpApi.Client.csproj", "{dde32d0c-540c-4519-b061-7f215b77fb59}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookManage.HttpApi", "modules\BookManage\src\BookManage.HttpApi\BookManage.HttpApi.csproj", "{f62f1e0b-468a-4252-87e0-ddc13dc95e10}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookManage.Domain.Shared", "modules\BookManage\src\BookManage.Domain.Shared\BookManage.Domain.Shared.csproj", "{aeadf7ef-7ccc-415a-b28e-6a1542eacfcd}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookManage.Domain", "modules\BookManage\src\BookManage.Domain\BookManage.Domain.csproj", "{84178e89-1056-4b5e-8305-ba45cff0435d}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookManage.Application.Contracts", "modules\BookManage\src\BookManage.Application.Contracts\BookManage.Application.Contracts.csproj", "{aca51931-dbd2-4fbf-97fd-28504ed3852c}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookManage.Application", "modules\BookManage\src\BookManage.Application\BookManage.Application.csproj", "{fa6f246d-e757-4b95-ae53-f7b7c7f516d8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BookManage.Tests", "BookManage.Tests", "{40cd3add-c137-4be0-88cd-5cb4254fc01d}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BookManage", "BookManage", "{3fd4ec9b-a22c-4ab7-b296-36f624b0cf8c}"
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ex_ImPortBook.TestBase", "modules\Ex\ImPortBook\test\Ex_ImPortBook.TestBase\Ex_ImPortBook.TestBase.csproj", "{754B4494-26A4-433D-8CA2-3A2428EA5847}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ex_ImPortBook.MongoDB.Tests", "modules\Ex\ImPortBook\test\Ex_ImPortBook.MongoDB.Tests\Ex_ImPortBook.MongoDB.Tests.csproj", "{3E56C24C-D561-41A2-B32D-A4EA1AD8AFFB}"
@@ -82,6 +110,54 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{f1b3800f-24ee-4622-a38c-00896f9631e1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{f1b3800f-24ee-4622-a38c-00896f9631e1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{f1b3800f-24ee-4622-a38c-00896f9631e1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{f1b3800f-24ee-4622-a38c-00896f9631e1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{a22b0095-f254-415e-9200-7ca287bf1033}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{a22b0095-f254-415e-9200-7ca287bf1033}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{a22b0095-f254-415e-9200-7ca287bf1033}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{a22b0095-f254-415e-9200-7ca287bf1033}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3c1c7f80-de6d-4019-8177-6cf135213277}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3c1c7f80-de6d-4019-8177-6cf135213277}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3c1c7f80-de6d-4019-8177-6cf135213277}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3c1c7f80-de6d-4019-8177-6cf135213277}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3086bb2e-4cea-49c6-a5b1-66cc4fc944ce}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3086bb2e-4cea-49c6-a5b1-66cc4fc944ce}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3086bb2e-4cea-49c6-a5b1-66cc4fc944ce}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3086bb2e-4cea-49c6-a5b1-66cc4fc944ce}.Release|Any CPU.Build.0 = Release|Any CPU
+		{fb968114-f21c-4df8-aa9f-090b44018abb}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{fb968114-f21c-4df8-aa9f-090b44018abb}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{fb968114-f21c-4df8-aa9f-090b44018abb}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{fb968114-f21c-4df8-aa9f-090b44018abb}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5e11a62a-9c43-40e9-b7e0-130e2f91da9e}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5e11a62a-9c43-40e9-b7e0-130e2f91da9e}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5e11a62a-9c43-40e9-b7e0-130e2f91da9e}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5e11a62a-9c43-40e9-b7e0-130e2f91da9e}.Release|Any CPU.Build.0 = Release|Any CPU
+		{dde32d0c-540c-4519-b061-7f215b77fb59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{dde32d0c-540c-4519-b061-7f215b77fb59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{dde32d0c-540c-4519-b061-7f215b77fb59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{dde32d0c-540c-4519-b061-7f215b77fb59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{f62f1e0b-468a-4252-87e0-ddc13dc95e10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{f62f1e0b-468a-4252-87e0-ddc13dc95e10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{f62f1e0b-468a-4252-87e0-ddc13dc95e10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{f62f1e0b-468a-4252-87e0-ddc13dc95e10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{aeadf7ef-7ccc-415a-b28e-6a1542eacfcd}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{aeadf7ef-7ccc-415a-b28e-6a1542eacfcd}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{aeadf7ef-7ccc-415a-b28e-6a1542eacfcd}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{aeadf7ef-7ccc-415a-b28e-6a1542eacfcd}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84178e89-1056-4b5e-8305-ba45cff0435d}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84178e89-1056-4b5e-8305-ba45cff0435d}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84178e89-1056-4b5e-8305-ba45cff0435d}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84178e89-1056-4b5e-8305-ba45cff0435d}.Release|Any CPU.Build.0 = Release|Any CPU
+		{aca51931-dbd2-4fbf-97fd-28504ed3852c}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{aca51931-dbd2-4fbf-97fd-28504ed3852c}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{aca51931-dbd2-4fbf-97fd-28504ed3852c}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{aca51931-dbd2-4fbf-97fd-28504ed3852c}.Release|Any CPU.Build.0 = Release|Any CPU
+		{fa6f246d-e757-4b95-ae53-f7b7c7f516d8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{fa6f246d-e757-4b95-ae53-f7b7c7f516d8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{fa6f246d-e757-4b95-ae53-f7b7c7f516d8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{fa6f246d-e757-4b95-ae53-f7b7c7f516d8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{554AD327-6DBA-4F8F-96F8-81CE7A0C863F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{554AD327-6DBA-4F8F-96F8-81CE7A0C863F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{554AD327-6DBA-4F8F-96F8-81CE7A0C863F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -211,6 +287,20 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{f1b3800f-24ee-4622-a38c-00896f9631e1} = {40cd3add-c137-4be0-88cd-5cb4254fc01d}
+		{a22b0095-f254-415e-9200-7ca287bf1033} = {40cd3add-c137-4be0-88cd-5cb4254fc01d}
+		{3c1c7f80-de6d-4019-8177-6cf135213277} = {40cd3add-c137-4be0-88cd-5cb4254fc01d}
+		{3086bb2e-4cea-49c6-a5b1-66cc4fc944ce} = {40cd3add-c137-4be0-88cd-5cb4254fc01d}
+		{fb968114-f21c-4df8-aa9f-090b44018abb} = {3fd4ec9b-a22c-4ab7-b296-36f624b0cf8c}
+		{5e11a62a-9c43-40e9-b7e0-130e2f91da9e} = {3fd4ec9b-a22c-4ab7-b296-36f624b0cf8c}
+		{dde32d0c-540c-4519-b061-7f215b77fb59} = {3fd4ec9b-a22c-4ab7-b296-36f624b0cf8c}
+		{f62f1e0b-468a-4252-87e0-ddc13dc95e10} = {3fd4ec9b-a22c-4ab7-b296-36f624b0cf8c}
+		{aeadf7ef-7ccc-415a-b28e-6a1542eacfcd} = {3fd4ec9b-a22c-4ab7-b296-36f624b0cf8c}
+		{84178e89-1056-4b5e-8305-ba45cff0435d} = {3fd4ec9b-a22c-4ab7-b296-36f624b0cf8c}
+		{aca51931-dbd2-4fbf-97fd-28504ed3852c} = {3fd4ec9b-a22c-4ab7-b296-36f624b0cf8c}
+		{fa6f246d-e757-4b95-ae53-f7b7c7f516d8} = {3fd4ec9b-a22c-4ab7-b296-36f624b0cf8c}
+		{40cd3add-c137-4be0-88cd-5cb4254fc01d} = {04DBDB01-70F4-4E06-B468-8F87850B22BE}
+		{3fd4ec9b-a22c-4ab7-b296-36f624b0cf8c} = {D2A8512E-29BD-4BD3-B4B0-AECF093762BD}
 		{554AD327-6DBA-4F8F-96F8-81CE7A0C863F} = {CA9AC87F-097E-4F15-8393-4BC07735A5B0}
 		{754B4494-26A4-433D-8CA2-3A2428EA5847} = {1789AFFD-0EF1-4833-ABB8-723C4E269556}
 		{3E56C24C-D561-41A2-B32D-A4EA1AD8AFFB} = {1789AFFD-0EF1-4833-ABB8-723C4E269556}
