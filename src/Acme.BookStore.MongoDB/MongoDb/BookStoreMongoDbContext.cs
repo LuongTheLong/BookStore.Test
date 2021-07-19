@@ -4,7 +4,7 @@ using Volo.Abp.Data;
 using Volo.Abp.MongoDB;
 using Acme.BookStore.Books;
 using Acme.BookStore.Authors;
-
+using BookManage.BookManage;
 
 namespace Acme.BookStore.MongoDB
 {
@@ -17,6 +17,7 @@ namespace Acme.BookStore.MongoDB
 
         public IMongoCollection<Author> Authors => Collection<Author>();
 
+        public IMongoCollection<BookManages> BookManage => Collection<BookManages>();
 
         protected override void CreateModel(IMongoModelBuilder modelBuilder)
         {

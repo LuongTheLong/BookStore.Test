@@ -9,6 +9,7 @@ using Volo.Abp.PermissionManagement.HttpApi;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
 using UserManage;
+using BookManage;
 
 
 
@@ -26,6 +27,7 @@ namespace Acme.BookStore
     [DependsOn(typeof(UserManageHttpApiModule))]
 
 
+    [DependsOn(typeof(BookManageHttpApiModule))]
     public class BookStoreHttpApiModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

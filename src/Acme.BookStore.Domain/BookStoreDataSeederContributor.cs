@@ -5,6 +5,7 @@ using Acme.BookStore.Books;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Domain.Repositories;
+using BookManage.BookManage;
 
 
 
@@ -16,18 +17,20 @@ namespace Acme.BookStore
         private readonly IRepository<Book, Guid> _bookRepository;
         private readonly IAuthorRepository _authorRepository;
         private readonly AuthorManager _authorManager;
+        private readonly IRepository<BookManages, Guid> _bookManagesRepository;
 
 
         public BookStoreDataSeederContributor(
             IRepository<Book, Guid> bookRepository,
             IAuthorRepository authorRepository,
-            AuthorManager authorManager
-
+            AuthorManager authorManager,
+            IRepository<BookManages, Guid> bookManagesRepository
             )
         {
             _bookRepository = bookRepository;
             _authorRepository = authorRepository;
             _authorManager = authorManager;
+            _bookManagesRepository = bookManagesRepository;
 
         }
 
@@ -38,10 +41,10 @@ namespace Acme.BookStore
                 return;
             }
 
-            //if (await _BookManagesRepostitory.GetCountAsync() > 0)
-            //{
-            //    return;
-            //}
+            if (await _bookManagesRepository.GetCountAsync() > 0)
+            {
+                return;
+            }
 
             var orwell = await _authorRepository.InsertAsync(
                 await _authorManager.CreateAsync(
@@ -87,30 +90,30 @@ namespace Acme.BookStore
                 autoSave: true
             );
 
-            //await _BookManagesRepostitory.InsertAsync(
-            //    new BookManage
-            //    {
-            //        AuthorId = orwell.Id, // SET THE AUTHOR
-            //        Name = b1.Name,
-            //        Type = BookManageType.Dystopia,
-            //        PublishDate = new DateTime(b1.PublishDate.Year, b1.PublishDate.Month, b1.PublishDate.Day),
-            //        Price = b1.Price,
-            //        Amount = 0
-            //    },
-            //    autoSave: true
-            //    );
-            //await _BookManagesRepostitory.InsertAsync(
-            //    new BookManage
-            //    {
-            //        AuthorId = douglas.Id, // SET THE AUTHOR
-            //        Name = b2.Name,
-            //        Type = BookManageType.ScienceFiction,
-            //        PublishDate = new DateTime(b2.PublishDate.Year, b2.PublishDate.Month, b2.PublishDate.Day),
-            //        Price = b2.Price,
-            //        Amount = 0
-            //    },
-            //    autoSave: true
-            //    );
+            await _bookManagesRepository.InsertAsync(
+                new BookManages
+                {
+                    AuthorId = orwell.Id, // SET THE AUTHOR
+                    Name = b1.Name,
+                    Type = BookManagesType.Dystopia,
+                    PublishDate = new DateTime(b1.PublishDate.Year, b1.PublishDate.Month, b1.PublishDate.Day),
+                    Price = b1.Price,
+                    Amount = 0
+                },
+                autoSave: true
+                );
+            await _bookManagesRepository.InsertAsync(
+                new BookManages
+                {
+                    AuthorId = douglas.Id, // SET THE AUTHOR
+                    Name = b2.Name,
+                    Type = BookManagesType.ScienceFiction,
+                    PublishDate = new DateTime(b2.PublishDate.Year, b2.PublishDate.Month, b2.PublishDate.Day),
+                    Price = b2.Price,
+                    Amount = 0
+                },
+                autoSave: true
+                );
         }
     }
 }

@@ -7,6 +7,7 @@ using Volo.Abp.PermissionManagement;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.SettingManagement;
 using UserManage;
+using BookManage;
 
 
 
@@ -24,6 +25,7 @@ namespace Acme.BookStore
     [DependsOn(typeof(UserManageHttpApiClientModule))]
 
 
+    [DependsOn(typeof(BookManageHttpApiClientModule))]
     public class BookStoreHttpApiClientModule : AbpModule
     {
         public const string RemoteServiceName = "Default";

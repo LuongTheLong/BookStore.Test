@@ -7,6 +7,7 @@ using Volo.Abp.PermissionManagement;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
 using UserManage;
+using BookManage;
 
 namespace Acme.BookStore
 {
@@ -22,6 +23,7 @@ namespace Acme.BookStore
         )]
     [DependsOn(typeof(UserManageApplicationModule))]
 
+    [DependsOn(typeof(BookManageApplicationModule))]
     public class BookStoreApplicationModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)

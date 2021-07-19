@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -11,7 +11,7 @@
     <Compile Remove="Controllers\NewFolder\**" />
     <EmbeddedResource Remove="Controllers\NewFolder\**" />
     <None Remove="Controllers\NewFolder\**" />
-  <ProjectReference Include="..\..\modules\UserManage\src\UserManage.HttpApi\UserManage.HttpApi.csproj" /></ItemGroup>
+  <ProjectReference Include="..\..\modules\UserManage\src\UserManage.HttpApi\UserManage.HttpApi.csproj" /><ProjectReference Include="..\..\modules\BookManage\src\BookManage.HttpApi\BookManage.HttpApi.csproj" /></ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Acme.BookStore.Application.Contracts\Acme.BookStore.Application.Contracts.csproj" />
